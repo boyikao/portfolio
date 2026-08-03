@@ -73,7 +73,7 @@ function openProject(slug) {
   drawer.querySelector('[data-drawer-evidence]').textContent = project.evidence;
   drawer.classList.add('is-open');
   drawer.setAttribute('aria-hidden', 'false');
-  drawer.querySelector('[data-drawer-close]').focus();
+  drawer.querySelector('.drawer-close')?.focus();
 }
 
 document.querySelectorAll('[data-filter]').forEach((button) => {

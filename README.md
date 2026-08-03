@@ -24,6 +24,11 @@ python -m http.server 4175
 
 发布后访问：<https://boyikao.github.io/portfolio/>
 
+## 相关链接
+
+- 个人主页：<https://boyikao.github.io>
+- GitHub 作品集仓库：<https://github.com/boyikao/portfolio>
+
 ## 文件说明
 
 - `index.html`：页面结构和作品集内容入口。
