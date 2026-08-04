@@ -16,15 +16,10 @@ const projectVisuals = {
   som: ['./assets/som-cluster-map.png', '电力用户样本分布图作为 SOM 分析证据', 'SOM / DATA TRACE'],
   computer: ['./assets/certificates/computer-certificate.jpg', '计算机设计大赛证书作为成果记录', 'COMPUTER DESIGN / AWARD'],
   electronic: ['./assets/electronic-c/architecture.png', '基于 OpenMV 与 STM32 的单目视觉测量系统架构图', 'ELECTRONICS DESIGN / SYSTEM ARCHITECTURE', [
-    ['./assets/electronic-c/schematic.png', 'STM32、OLED 与 OpenMV 硬件原理图', 'HARDWARE / SCHEMATIC'],
-    ['./assets/electronic-c/stm32-flow.png', 'STM32 程序流程图', 'FIRMWARE / FLOW'],
-    ['./assets/electronic-c/test-circle.png', '圆形目标测量结果截图', 'TEST / CIRCLE'],
-    ['./assets/electronic-c/test-triangle.png', '三角形目标测量结果截图', 'TEST / TRIANGLE']
+    ['./assets/electronic-c/test-circle.png', '圆形目标测量结果截图', 'TEST / CIRCLE']
   ]],
   pcb: ['./assets/pcb-training/pcb-completed-board.jpg', '完成绘制的 PCB 作为培训成果证据', 'PCB TRAINING / COMPLETED BOARD', [
-    ['./assets/pcb-training/pcb-routing.png', 'PCB 布线操作', 'ROUTING'],
-    ['./assets/pcb-training/pcb-drc-check.png', 'PCB DRC 规则检查', 'DRC CHECK'],
-    ['./assets/pcb-training/pcb-design-flow.jpg', 'PCB 设计流程', 'DESIGN FLOW']
+    ['./assets/pcb-training/pcb-routing.png', 'PCB 布线操作', 'ROUTING']
   ]]
 };
 
