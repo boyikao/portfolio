@@ -13,7 +13,7 @@ const lightbox = document.querySelector('[data-lightbox]');
 const projectVisuals = {
   innovation: ['./assets/measurement-result.jpg', '易购小车原型与桌面测量现场', 'REAL HARDWARE / MEASUREMENT'],
   robotics: ['./assets/measurement-result.jpg', '硬件原型作为系统集成证据', 'SYSTEM INTEGRATION / HARDWARE'],
-  som: ['./assets/certificates/ai-certificate.jpg', '人工智能相关竞赛证书作为成果记录', 'ANALYSIS / RESULT RECORD'],
+  som: ['./assets/som-cluster-map.png', '电力用户样本分布图作为 SOM 分析证据', 'SOM / DATA TRACE'],
   computer: ['./assets/certificates/computer-certificate.jpg', '计算机设计大赛证书作为成果记录', 'COMPUTER DESIGN / AWARD'],
   electronic: ['./assets/certificates/electronics-certificate.jpg', '电子设计竞赛证书作为成果记录', 'ELECTRONICS DESIGN / AWARD'],
   pcb: ['./assets/measurement-setup-cropped.jpg', '硬件装配现场作为 PCB 实践证据', 'PCB TRAINING / DEBUGGING']
