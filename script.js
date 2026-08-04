@@ -11,7 +11,7 @@ const list = document.querySelector('[data-project-list]');
 const drawer = document.querySelector('[data-drawer]');
 const lightbox = document.querySelector('[data-lightbox]');
 const projectVisuals = {
-  innovation: ['./assets/measurement-result.jpg', '易购小车原型与桌面测量现场', 'REAL HARDWARE / MEASUREMENT'],
+  innovation: ['./assets/egou-cart-code-result.png', '易购小车项目的代码、识别流程与成果展示', 'EGO CART / CODE & RESULT'],
   robotics: ['./assets/measurement-result.jpg', '硬件原型作为系统集成证据', 'SYSTEM INTEGRATION / HARDWARE'],
   som: ['./assets/som-cluster-map.png', '电力用户样本分布图作为 SOM 分析证据', 'SOM / DATA TRACE'],
   computer: ['./assets/certificates/computer-certificate.jpg', '计算机设计大赛证书作为成果记录', 'COMPUTER DESIGN / AWARD'],
