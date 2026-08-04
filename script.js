@@ -16,7 +16,11 @@ const projectVisuals = {
   som: ['./assets/som-cluster-map.png', '电力用户样本分布图作为 SOM 分析证据', 'SOM / DATA TRACE'],
   computer: ['./assets/certificates/computer-certificate.jpg', '计算机设计大赛证书作为成果记录', 'COMPUTER DESIGN / AWARD'],
   electronic: ['./assets/certificates/electronics-certificate.jpg', '电子设计竞赛证书作为成果记录', 'ELECTRONICS DESIGN / AWARD'],
-  pcb: ['./assets/measurement-setup-cropped.jpg', '硬件装配现场作为 PCB 实践证据', 'PCB TRAINING / DEBUGGING']
+  pcb: ['./assets/pcb-training/pcb-completed-board.jpg', '完成绘制的 PCB 作为培训成果证据', 'PCB TRAINING / COMPLETED BOARD', [
+    ['./assets/pcb-training/pcb-routing.png', 'PCB 布线操作', 'ROUTING'],
+    ['./assets/pcb-training/pcb-drc-check.png', 'PCB DRC 规则检查', 'DRC CHECK'],
+    ['./assets/pcb-training/pcb-design-flow.jpg', 'PCB 设计流程', 'DESIGN FLOW']
+  ]]
 };
 
 function renderProjects(filter = 'all') {
@@ -48,10 +52,14 @@ function openDrawer(id) {
     visual.innerHTML = '<img alt=""><span class="mono"></span>';
     drawer.querySelector('[data-drawer-summary]').after(visual);
   }
-  const [visualSrc, visualAlt, visualLabel] = projectVisuals[id];
-  visual.querySelector('img').src = visualSrc;
-  visual.querySelector('img').alt = visualAlt;
-  visual.querySelector('span').textContent = visualLabel;
+  const [visualSrc, visualAlt, visualLabel, gallery = []] = projectVisuals[id];
+  visual.innerHTML = `<img src="${visualSrc}" alt="${visualAlt}"><span class="mono">${visualLabel}</span>${gallery.length ? `<div class="drawer-gallery">${gallery.map(([src, alt, label]) => `<button type="button" data-gallery-src="${src}" data-gallery-alt="${alt}" data-gallery-label="${label}" aria-label="查看 ${label}"><img src="${src}" alt=""></button>`).join('')}</div>` : ''}`;
+  visual.querySelectorAll('[data-gallery-src]').forEach(button => button.addEventListener('click', () => {
+    const mainImage = visual.querySelector('img');
+    mainImage.src = button.dataset.gallerySrc;
+    mainImage.alt = button.dataset.galleryAlt;
+    visual.querySelector('span').textContent = button.dataset.galleryLabel;
+  }));
   drawer.querySelector('[data-drawer-role]').textContent = project.role;
   drawer.querySelector('[data-drawer-features]').innerHTML = project.features.map(feature => `<li>${feature}</li>`).join('');
   drawer.querySelector('[data-drawer-tags]').innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
