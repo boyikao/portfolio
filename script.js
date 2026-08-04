@@ -10,6 +10,14 @@ const projects = [
 const list = document.querySelector('[data-project-list]');
 const drawer = document.querySelector('[data-drawer]');
 const lightbox = document.querySelector('[data-lightbox]');
+const projectVisuals = {
+  innovation: ['./assets/measurement-result.jpg', '易购小车原型与桌面测量现场', 'REAL HARDWARE / MEASUREMENT'],
+  robotics: ['./assets/measurement-result.jpg', '硬件原型作为系统集成证据', 'SYSTEM INTEGRATION / HARDWARE'],
+  som: ['./assets/certificates/ai-certificate.jpg', '人工智能相关竞赛证书作为成果记录', 'ANALYSIS / RESULT RECORD'],
+  computer: ['./assets/certificates/computer-certificate.jpg', '计算机设计大赛证书作为成果记录', 'COMPUTER DESIGN / AWARD'],
+  electronic: ['./assets/certificates/electronics-certificate.jpg', '电子设计竞赛证书作为成果记录', 'ELECTRONICS DESIGN / AWARD'],
+  pcb: ['./assets/measurement-setup-cropped.jpg', '硬件装配现场作为 PCB 实践证据', 'PCB TRAINING / DEBUGGING']
+};
 
 function renderProjects(filter = 'all') {
   const filtered = filter === 'all' ? projects : projects.filter(project => project.id === filter);
@@ -33,6 +41,17 @@ function openDrawer(id) {
   drawer.querySelector('[data-drawer-type]').textContent = `${project.type} / PROJECT FILE`;
   drawer.querySelector('[data-drawer-title]').textContent = project.title;
   drawer.querySelector('[data-drawer-summary]').textContent = project.summary;
+  let visual = drawer.querySelector('.drawer-visual');
+  if (!visual) {
+    visual = document.createElement('div');
+    visual.className = 'drawer-visual';
+    visual.innerHTML = '<img alt=""><span class="mono"></span>';
+    drawer.querySelector('[data-drawer-summary]').after(visual);
+  }
+  const [visualSrc, visualAlt, visualLabel] = projectVisuals[id];
+  visual.querySelector('img').src = visualSrc;
+  visual.querySelector('img').alt = visualAlt;
+  visual.querySelector('span').textContent = visualLabel;
   drawer.querySelector('[data-drawer-role]').textContent = project.role;
   drawer.querySelector('[data-drawer-features]').innerHTML = project.features.map(feature => `<li>${feature}</li>`).join('');
   drawer.querySelector('[data-drawer-tags]').innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
