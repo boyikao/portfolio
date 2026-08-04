@@ -8,6 +8,8 @@
 - 个人主页：<https://boyikao.github.io>
 - GitHub 仓库：<https://github.com/boyikao/portfolio>
 - 作品集 ZIP：<https://github.com/boyikao/portfolio/archive/refs/heads/main.zip>
+- VIP 下载 · 百度网盘：<https://pan.baidu.com/s/18tFd2RtVE3iUwPplHvRQQg?pwd=igxa>（提取码：`igxa`）
+- VIP 下载 · 夸克网盘：<https://pan.quark.cn/s/058f31c61f6c>
 
 
 ## 项目范围
