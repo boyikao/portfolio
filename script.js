@@ -15,12 +15,21 @@ const projectVisuals = {
   robotics: ['./assets/shopping-eye-weighing-system.jpg', '购物慧眼无人称重计价系统现场测试', 'SHOPPING EYE / WEIGHING TEST'],
   som: ['./assets/som-cluster-map.png', '电力用户样本分布图作为 SOM 分析证据', 'SOM / DATA TRACE'],
   computer: ['./assets/certificates/computer-certificate.jpg', '计算机设计大赛证书作为成果记录', 'COMPUTER DESIGN / AWARD'],
-  electronic: ['./assets/certificates/electronics-certificate.jpg', '电子设计竞赛证书作为成果记录', 'ELECTRONICS DESIGN / AWARD'],
+  electronic: ['./assets/electronic-c/architecture.png', '基于 OpenMV 与 STM32 的单目视觉测量系统架构图', 'ELECTRONICS DESIGN / SYSTEM ARCHITECTURE', [
+    ['./assets/electronic-c/schematic.png', 'STM32、OLED 与 OpenMV 硬件原理图', 'HARDWARE / SCHEMATIC'],
+    ['./assets/electronic-c/stm32-flow.png', 'STM32 程序流程图', 'FIRMWARE / FLOW'],
+    ['./assets/electronic-c/test-circle.png', '圆形目标测量结果截图', 'TEST / CIRCLE'],
+    ['./assets/electronic-c/test-triangle.png', '三角形目标测量结果截图', 'TEST / TRIANGLE']
+  ]],
   pcb: ['./assets/pcb-training/pcb-completed-board.jpg', '完成绘制的 PCB 作为培训成果证据', 'PCB TRAINING / COMPLETED BOARD', [
     ['./assets/pcb-training/pcb-routing.png', 'PCB 布线操作', 'ROUTING'],
     ['./assets/pcb-training/pcb-drc-check.png', 'PCB DRC 规则检查', 'DRC CHECK'],
     ['./assets/pcb-training/pcb-design-flow.jpg', 'PCB 设计流程', 'DESIGN FLOW']
   ]]
+};
+
+const projectDetails = {
+  electronic: `<div class="drawer-detail"><h3>系统拆分</h3><div class="detail-grid"><div><strong>OpenMV H7 Plus</strong><span>图像采集、目标检测、特征提取</span></div><div><strong>STM32F103C8T6</strong><span>数据接收、二次计算、误差补偿与控制</span></div><div><strong>OV5640 / OLED</strong><span>500 万像素采集与测量结果显示</span></div><div><strong>UART / I2C</strong><span>OpenMV 以 115200bps 与主控通信，OLED 使用 I2C</span></div></div></div><div class="drawer-detail"><h3>测量原理</h3><p class="formula">D = (W_real × f) / W_pixel<br />x_real = (x_pixel / W_pixel) × W_real</p><p>通过已知尺寸标定相机焦距，再由目标在图像中的像素宽度换算距离和几何尺寸。</p></div><div class="drawer-detail"><h3>报告测试记录</h3><div class="test-table-wrap"><table class="test-table"><thead><tr><th>目标</th><th>真实距离</th><th>测量均值</th><th>距离误差</th><th>尺寸误差</th></tr></thead><tbody><tr><td>圆形</td><td>100.0 cm</td><td>101.2 cm</td><td>+1.2 cm</td><td>+0.3 cm</td></tr><tr><td>三角形</td><td>400.0 cm</td><td>401.8 cm</td><td>+1.8 cm</td><td>-0.4 cm</td></tr><tr><td>正方形</td><td>700.0 cm</td><td>698.5 cm</td><td>-1.5 cm</td><td>-0.1 cm</td></tr></tbody></table></div><p class="detail-source">数据来源：项目报告表 4.1；报告记录距离误差均在 5 cm 内、尺寸误差均在 2 cm 内。</p></div>`
 };
 
 function renderProjects(filter = 'all') {
@@ -64,6 +73,9 @@ function openDrawer(id) {
   drawer.querySelector('[data-drawer-features]').innerHTML = project.features.map(feature => `<li>${feature}</li>`).join('');
   drawer.querySelector('[data-drawer-tags]').innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
   drawer.querySelector('[data-drawer-evidence]').textContent = `证据状态：${project.evidence}。项目成果：${project.result}。`;
+  const detail = drawer.querySelector('[data-drawer-detail]');
+  detail.innerHTML = projectDetails[id] || '';
+  detail.hidden = !projectDetails[id];
   drawer.classList.add('is-open'); drawer.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
 }
 
