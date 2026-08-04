@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="李张铂垚的工程项目作品集，记录电子设计、嵌入式、机器人、计算机设计、SOM 神经网络和 PCB 培训实践。" />
+    <title>项目证据档案 | 李张铂垚</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="返回顶部"><span class="brand-mark">LB</span><span>PROJECT ARCHIVE</span></a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="#projects">项目索引</a>
+        <a href="#evidence">技术证据</a>
+        <a href="#about">关于档案</a>
+      </nav>
+      <a class="header-repo" href="https://github.com/boyikao/portfolio" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="mono kicker">ENGINEERING PROJECT ARCHIVE / 2026</p>
+          <h1>项目，不只展示结果。<br /><em>还要留下怎么做出来的证据。</em></h1>
+          <p class="hero-text">我是李张铂垚，通信工程本科生。我的项目横跨电子设计、嵌入式、机器人、计算机设计、SOM 神经网络和 PCB 实践，重点记录我负责的工作、实现的功能与可以复核的过程。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects"><span class="icon">⌁</span>查看项目</a>
+            <a class="button button-secondary" href="https://pan.baidu.com/s/18tFd2RtVE3iUwPplHvRQQg?pwd=igxa" target="_blank" rel="noreferrer"><span class="icon">↓</span>下载项目 ZIP</a>
+          </div>
+          <div class="hero-meta"><span>西藏大学 / 通信工程</span><span>嵌入式 · 硬件 · 数据</span><span>持续更新</span></div>
+        </div>
+        <div class="hero-media">
+          <div class="media-label"><span class="status-dot"></span>REAL PROJECT EVIDENCE</div>
+          <img src="./assets/measurement-result.jpg" alt="自主移动平台原型与测量现场" />
+          <div class="media-caption"><span>01 / 自主移动平台</span><span class="mono">HARDWARE / TEST</span></div>
+        </div>
+      </section>
+
+      <section class="principles shell" id="about">
+        <div class="section-marker"><span>01</span><span>WORKING METHOD</span></div>
+        <div class="principles-main">
+          <h2>把问题拆成可以测量的环节，再用结果验证每一次改动。</h2>
+          <p>从硬件选型、电路搭建和焊接，到程序编写、信号调试、通信联调与故障排查，我习惯把复杂问题拆成接口、数据和状态，再把过程写成可复现的项目记录。</p>
+        </div>
+        <div class="principle-list">
+          <div><span class="mono">01</span><div><strong>拆解链路</strong><p>先明确输入、处理、输出和验证边界。</p></div></div>
+          <div><span class="mono">02</span><div><strong>做联调</strong><p>让硬件、程序和通信在同一条链路上工作。</p></div></div>
+          <div><span class="mono">03</span><div><strong>留证据</strong><p>用实物照片、数据截图、证书和文档说明边界。</p></div></div>
+        </div>
+      </section>
+
+      <section class="projects shell" id="projects">
+        <div class="section-marker"><span>02</span><span>PROJECT INDEX</span></div>
+        <div class="projects-main">
+          <div class="section-heading">
+            <div><p class="mono kicker">SELECTED CASE FILES</p><h2>项目索引</h2></div>
+            <p class="section-intro">按项目方向筛选，打开一份档案查看我的参与工作、实现功能和证据状态。</p>
+          </div>
+          <div class="filters" role="group" aria-label="项目分类筛选">
+            <button class="filter is-active" type="button" data-filter="all">全部</button>
+            <button class="filter" type="button" data-filter="electronic">电子设计大赛</button>
+            <button class="filter" type="button" data-filter="innovation">大创</button>
+            <button class="filter" type="button" data-filter="robotics">机器人大赛</button>
+            <button class="filter" type="button" data-filter="computer">计算机大赛</button>
+            <button class="filter" type="button" data-filter="som">SOM</button>
+            <button class="filter" type="button" data-filter="pcb">PCB 培训</button>
+          </div>
+          <div class="project-table" data-project-list></div>
+        </div>
+      </section>
+
+      <section class="evidence shell" id="evidence">
+        <div class="section-marker"><span>03</span><span>TECHNICAL EVIDENCE</span></div>
+        <div class="evidence-main">
+          <div class="section-heading"><div><p class="mono kicker">PHYSICAL RECORD</p><h2>技术证据</h2></div><p class="section-intro">公开展示真实项目过程；原始代码、完整文档和数据集通过项目 ZIP 归档提供。</p></div>
+          <div class="evidence-grid">
+            <figure class="evidence-photo evidence-photo-large"><img src="./assets/measurement-result.jpg" alt="小车原型在桌面上的测量测试" /><figcaption><span>实物照片 / 01</span><span class="mono">MEASUREMENT-RESULT</span></figcaption></figure>
+            <figure class="evidence-photo"><img src="./assets/measurement-setup-cropped.jpg" alt="小车原型装配与控制板连接" /><figcaption><span>装配现场 / 02</span><span class="mono">MEASUREMENT-SETUP</span></figcaption></figure>
+            <div class="evidence-note"><span class="note-line"></span><p>真实素材用于说明项目边界。发布前会继续裁切人物区域、检查隐私，并为每一张图补充具体项目上下文。</p><span class="mono note-code">EVIDENCE / TRACEABLE</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="records shell">
+        <div class="section-marker"><span>04</span><span>RESULTS &amp; RECORDS</span></div>
+        <div class="records-main">
+          <div class="records-copy"><p class="mono kicker">COMPETITION / TRAINING</p><h2>成果记录，也记录参与方式。</h2><p>竞赛结果不是项目的全部。这里把电子设计大赛、大创、机器人和计算机大赛，以及 SOM 与学院 PCB 培训放在同一份工程档案里，区分个人负责内容和团队成果。</p></div>
+          <div class="certificate-strip">
+            <figure><img src="./assets/certificates/electronics-certificate.jpg" alt="电子设计竞赛获奖证书" /><figcaption>电子设计大赛</figcaption></figure>
+            <figure><img src="./assets/certificates/computer-certificate.jpg" alt="计算机设计大赛获奖证书" /><figcaption>计算机大赛</figcaption></figure>
+            <figure><img src="./assets/certificates/ai-certificate.jpg" alt="人工智能大赛获奖证书" /><figcaption>人工智能相关竞赛</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="download shell">
+        <div class="download-copy"><p class="mono kicker">PROJECT ARCHIVE / ZIP</p><h2>完整材料，从网盘获取。</h2><p>作品集 ZIP 包含项目说明、原理图、代码和可公开的过程材料。网站页面只展示经过整理的公开证据。</p></div>
+        <div class="download-actions"><a class="download-link baidu" href="https://pan.baidu.com/s/18tFd2RtVE3iUwPplHvRQQg?pwd=igxa" target="_blank" rel="noreferrer"><span class="download-icon">B</span><span><strong>百度网盘</strong><small>作品集.zip · 提取码 igxa</small></span><span class="arrow">↗</span></a><a class="download-link quark" href="https://pan.quark.cn/s/058f31c61f6c" target="_blank" rel="noreferrer"><span class="download-icon">Q</span><span><strong>夸克网盘</strong><small>作品集.zip · 在线保存</small></span><span class="arrow">↗</span></a></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>© 2026 李张铂垚</span><span class="mono">PROJECT ARCHIVE / BUILT WITH EVIDENCE</span><a href="https://github.com/boyikao/portfolio" target="_blank" rel="noreferrer">访问项目及仓库 ↗</a></footer>
+
+    <div class="drawer" data-drawer aria-hidden="true"><div class="drawer-backdrop" data-close-drawer></div><aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title"><button class="drawer-close" type="button" data-close-drawer aria-label="关闭项目详情">×</button><p class="mono drawer-type" data-drawer-type></p><h2 id="drawer-title" data-drawer-title></h2><p class="drawer-summary" data-drawer-summary></p><div class="drawer-block"><h3>我的工作</h3><p data-drawer-role></p></div><div class="drawer-block"><h3>实现功能</h3><ul data-drawer-features></ul></div><div class="drawer-tags" data-drawer-tags></div><p class="drawer-evidence" data-drawer-evidence></p></aside></div>
+    <div class="lightbox" data-lightbox aria-hidden="true"><button type="button" data-close-lightbox aria-label="关闭图片预览">×</button><img data-lightbox-image alt="放大的项目证据图片" /></div>
+    <script src="./script.js"></script>
+  </body>
+</html>
